@@ -14,3 +14,8 @@ cd EDUFINANCE-FRONT
 ```shell
 code .
 ```
+6. crear su propia rama
+```shell
+# git checkout -b <nombre-rama>
+git checkout -b santiago
+```
