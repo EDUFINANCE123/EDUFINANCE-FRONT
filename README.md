@@ -1,5 +1,16 @@
 # EDUFINANCE-FRONT
-para descargar el repositorio se dirijen a su carpeta de trabajo y abren consola, alli ejecutan el comando
+pasos para poder trabajar en el repositorio
+1. dirigirse a la carpeta donde trabajaran en su equipo
+2. abrir el shell "terminal"
+3. clonar repositorio
 ```shell
-$ git clone https://github.com/EDUFINANCE123/EDUFINANCE-FRONT.git
+git clone https://github.com/EDUFINANCE123/EDUFINANCE-FRONT.git
+```
+4. escribir
+```shell
+cd EDUFINANCE-FRONT
+```
+5. abrir visual studio code
+```shell
+code .
 ```
