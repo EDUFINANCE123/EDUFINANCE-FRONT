@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar Gastos</title>
+</head>
+<body>
+    
+    <!-- Enlaces a estilos compartidos con la página principal -->
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <!-- Menú de navegación -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="../index.html">EduFinance</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="../index.html">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../registrarGastos/registrar_gastos.html">Registrar Gastos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../visualizacionGastos/visualizar_gastos.htm">Visualizar Gastos</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Formulario para registrar gastos -->
+    <div class="container mt-5">
+        <h2>Registrar un nuevo gasto</h2>
+        <form id="gastoForm">
+            <div class="form-group">
+                <label for="descripcion">Descripción</label>
+                <input type="text" class="form-control" id="descripcion" placeholder="Descripción del gasto" required>
+            </div>
+            <div class="form-group">
+                <label for="monto">Monto</label>
+                <input type="number" class="form-control" id="monto" placeholder="Monto en USD" required>
+            </div>
+            <div class="form-group">
+                <label for="fecha">Fecha</label>
+                <input type="date" class="form-control" id="fecha" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Registrar</button>
+        </form>
+    </div>
+
+    <!-- Archivos JavaScript -->
+    <script src="../assets/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="../assets/js/vendor/bootstrap.min.js"></script>
+    <script src="../registrarGastos/registrarGastos.js"></script>
+</body>
+</html>
+

@@ -69,19 +69,30 @@
                             <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
                                 <ul id="nav" class="navbar-nav ml-auto">
                                     <li class="nav-item active">
-                                        <a class="page-scroll" href="#home">Inicio</a>
+                                        <a class="page-scroll" href="index.html">Inicio</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="page-scroll" href="#why">Porque nosotros</a>
+                                        <a class="page-scroll" href="../EDUFINANCE-FRONT/registrarGastos/registrar_gastos.html">Registrar Gastos</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="page-scroll" href="#features">Caracteristicas</a>
+                                        <a class="page-scroll" href="../EDUFINANCE-FRONT/visualizacionGastos/visualizar_gastos.htm">Visualizar Gastos</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="page-scroll" href="#download" id="ingresar">Ingresar</a>
+                                        <a class="page-scroll" href="#why">Porque Nosotros</a>
                                     </li>
+                                    <li class="nav-item">
+                                        <a class="page-scroll" href="#features">Características</a>
+                                    </li>
+                                    <li class="nav-item" id="usuario-container" style="display: none;">
+                                        <a class="page-scroll" href="#" id="cerrar-sesion">Cerrar Sesión</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="page-scroll" href="ingresar/ingresar.html" id="ingresar">Ingresar</a>
+                                    </li>
+                                    
                                 </ul>
-                            </div> 
+                            </div>
+                            
                         </nav> 
                     </div>
                 </div>
@@ -316,6 +327,35 @@
     <!--====== Main js ======-->
     <script src="assets/js/main.js"></script>
     <script src="assets/js/userName.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const nombreUsuario = localStorage.getItem("nombreUsuario");
+            const ingresarBtn = document.getElementById("ingresar");
+            const cerrarSesionBtn = document.getElementById("cerrar-sesion");
+            const usuarioContainer = document.getElementById("usuario-container");
+        
+            if (nombreUsuario) {
+                // Cambia el texto del botón "Ingresar" por el nombre del usuario
+                ingresarBtn.textContent = `Bienvenido, ${nombreUsuario}`;
+                ingresarBtn.href = "#"; // Si ya ha iniciado sesión, no debe redirigir al login
+                usuarioContainer.style.display = "block"; // Muestra el botón de cerrar sesión
+                cerrarSesionBtn.style.display = "block"; // Muestra el botón de cerrar sesión
+            } else {
+                // Muestra el botón "Ingresar" si no hay usuario
+                usuarioContainer.style.display = "none"; // Oculta el botón de cerrar sesión
+            }
+        
+            
+            // Evento para cerrar sesión
+            cerrarSesionBtn.addEventListener("click", function() {
+                localStorage.removeItem("nombreUsuario"); // Elimina el nombre del usuario del localStorage
+                location.reload(); // Recarga la página para reflejar los cambios
+            });
+        });
+        </script>
+        
+        
     
 </body>
 
