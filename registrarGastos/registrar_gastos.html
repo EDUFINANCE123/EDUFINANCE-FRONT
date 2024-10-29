@@ -43,11 +43,20 @@
             </div>
             <div class="form-group">
                 <label for="monto">Monto</label>
-                <input type="number" class="form-control" id="monto" placeholder="Monto en USD" required>
+                <input type="number" class="form-control" id="monto" placeholder="Monto en COP" required>
             </div>
             <div class="form-group">
                 <label for="fecha">Fecha</label>
                 <input type="date" class="form-control" id="fecha" required>
+            </div>
+            <div class="form-group">
+                <select name="Categoria" id="categoria" placeholder="Categoria" required>
+                    <option value="" >Seleciona la categoria</option>
+                    <option value="Alimetacion" >Alimetacion</option>
+                    <option value="Transporte">Transporte</option>
+                    <option value="Entretenimiento" >Entretenimiento</option>
+                    <option value="Educacion">Educacion</option>
+                </select>
             </div>
             <button type="submit" class="btn btn-primary">Registrar</button>
         </form>
