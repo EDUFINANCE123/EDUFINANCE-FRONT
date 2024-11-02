@@ -1,0 +1,12 @@
+/* ingresar.css */
+.navbar {
+    padding: 0.5rem 1rem; /* Ajusta el padding para reducir el tamaño */
+}
+
+.navbar-brand img {
+    width: 6rem; /* Ajusta el tamaño de la imagen del logo */
+}
+
+.nav-link {
+    font-size: 0.9rem; /* Ajusta el tamaño de la fuente de los enlaces */
+}
