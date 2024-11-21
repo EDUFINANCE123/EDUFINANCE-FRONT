@@ -11,6 +11,7 @@ function cargarGastos() {
         const row = document.createElement('tr');
         row.innerHTML = `
             <td>${gasto.descripcion}</td>
+            <td>${gasto.categoria}</td>
             <td>${gasto.monto}</td>
             <td>${gasto.fecha}</td>
         `;

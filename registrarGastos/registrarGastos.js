@@ -2,10 +2,11 @@ document.getElementById('gastoForm').addEventListener('submit', function (event)
     event.preventDefault();
 
     const descripcion = document.getElementById('descripcion').value;
+    const categoria = document.getElementById('categoria').value;
     const monto = document.getElementById('monto').value;
     const fecha = document.getElementById('fecha').value;
 
-    if (!descripcion || !monto || !fecha) {
+    if (!descripcion || !categoria||!monto || !fecha) {
         alert('Por favor, rellena todos los campos.');
         return;
     }
@@ -13,6 +14,7 @@ document.getElementById('gastoForm').addEventListener('submit', function (event)
     // Almacenar el gasto en localStorage
     const gasto = {
         descripcion,
+        categoria,
         monto,
         fecha
     };
