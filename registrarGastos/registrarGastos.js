@@ -1,4 +1,4 @@
-document.getElementById('gastoForm').addEventListener('submit', function (event) {
+document.getElementById('gastoForm').addEventListener('submit', async function (event) {
     event.preventDefault();
 
     const descripcion = document.getElementById('descripcion').value;
@@ -11,20 +11,43 @@ document.getElementById('gastoForm').addEventListener('submit', function (event)
         return;
     }
 
-    // Almacenar el gasto en localStorage
-    const gasto = {
-        descripcion,
-        categoria,
-        monto,
-        fecha
-    };
+    gasto = {
+        user_id: 1,
+        category_id: categoria,
+        description: descripcion,
+        cantidad: monto,
+        fecha,
+    }
+    console.log(gasto);
 
-    let gastos = JSON.parse(localStorage.getItem('gastos')) || [];
-    gastos.push(gasto);
-    localStorage.setItem('gastos', JSON.stringify(gastos));
-
-    // Reiniciar el formulario
-    document.getElementById('gastoForm').reset();
+    const resInsert = await fetch('http://localhost:8080/expenses/add', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(gasto)
+    })
+    const data = await resInsert.json();
+    console.log('data', data);
 
     alert('Gasto registrado con éxito.');
+
+    // Almacenar el gasto en localStorage
+    // const gasto = {
+    //     descripcion,
+    //     categoria,
+    //     monto,
+    //     fecha
+    // };
+
+    // aqui lo mandamos a la API
+    
+
+    // let gastos = JSON.parse(localStorage.getItem('gastos')) || [];
+    // gastos.push(gasto);
+    // localStorage.setItem('gastos', JSON.stringify(gastos));
+
+    // // Reiniciar el formulario
+    // document.getElementById('gastoForm').reset();
+
 });

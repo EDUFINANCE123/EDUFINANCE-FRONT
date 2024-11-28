@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+    </div>
+
+    <input type="text" placeholder="Indique la categoria a insertar" id="categoryValue">
+    <button id="insertCategory">Insertar categoria</button>
+
+
+    <script>
+        fetch('http://localhost:8080/categories')
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                let container = document.getElementById('container');
+                data.forEach(category => {
+                    let index = document.createElement('div');
+                    index.innerHTML = category.id_category;
+                    container.appendChild(index);
+
+                    let div = document.createElement('div');
+                    div.innerHTML = category.name_category;
+                    container.appendChild(div);
+                });
+            })
+    </script>
+
+    <script>
+        document.getElementById('insertCategory').addEventListener('click', () => {
+            let categoryValue = document.getElementById('categoryValue').value;
+
+            fetch('http://localhost:8080/categories', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    id_category: 6,
+                    name_category: categoryValue
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+            })
+        })
+    </script>
+</body>
+</html>
